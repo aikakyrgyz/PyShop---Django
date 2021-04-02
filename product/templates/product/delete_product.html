@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 style="color:#fff;"> Warning! You are to delete a product</h1>
+<form style="color:#fff;" method="post" >
+        {{ product_form.as_p }}
+            {% csrf_token  %}
+    <button type="submit" class="btn btn-danger">Yes</button>
+    <a class="btn btn-outline-success" href="{% url 'detail' product.id %}" role="button">No</a>
+
+</form>
+
+{% endblock %}
+
